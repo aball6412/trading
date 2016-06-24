@@ -1,1 +1,35 @@
-<h1>EJS Oanda Trading Strategy</h1>
+<html>
+    
+    
+    
+    <body>
+        
+        <head>
+        
+        
+        
+        </head>
+    
+    
+    
+        <h1>EJS Oanda Trading Strategy</h1>
+    
+        <% for (var i in candles) { %>
+        
+        <p>Open: <%= candles[i].open %></p>
+        <p>High: <%= candles[i].high %></p>
+        <p>Low: <%= candles[i].low %></p>
+        <p>Close: <%= candles[i].close %></p>
+                         
+       <% } %>
+    
+    
+    
+    </body>
+
+
+
+
+
+
+</html>
