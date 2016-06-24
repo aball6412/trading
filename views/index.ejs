@@ -5,7 +5,7 @@
     <body>
         
         <head>
-        
+         <link rel="stylesheet" type="text/css" href="style.css" />
         
         
         </head>
@@ -16,10 +16,12 @@
     
         <% for (var i in candles) { %>
         
+        <p>Time: <%= candles[i].time %></p>
         <p>Open: <%= candles[i].open %></p>
         <p>High: <%= candles[i].high %></p>
         <p>Low: <%= candles[i].low %></p>
         <p>Close: <%= candles[i].close %></p>
+        <br />
                          
        <% } %>
     

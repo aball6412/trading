@@ -37,7 +37,7 @@ app.get("/", function(request, response) {
     var options = 
         {
             host: "api-fxtrade.oanda.com",
-            path: "/v1/candles?instrument=EUR_USD&count=5&granularity=M5",
+            path: "/v1/candles?instrument=EUR_USD&count=5&granularity=M5&candleFormat=midpoint",
             method: "GET",
             headers: { "Authorization": "Bearer " + token }
         };
@@ -61,15 +61,19 @@ app.get("/", function(request, response) {
 
             var price = JSON.parse(str).candles;
             
+            console.log(price);
+            
             for (var i in price) {
                 
-                var open = price[i].openBid;
-                var high = price[i].highBid;
-                var low = price[i].lowBid;
-                var close = price[i].closeBid;
+                var time = price[i].time;
+                var open = price[i].openMid;
+                var high = price[i].highMid;
+                var low = price[i].lowMid;
+                var close = price[i].closeMid;
                 
                 var display = 
                     {
+                        time: time,
                         open: open,
                         high: high,
                         low: low,
